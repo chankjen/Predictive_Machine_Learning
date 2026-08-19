@@ -22,19 +22,19 @@ The notebook includes a small environment guard that prepends `notebook_deps` to
 Use the bundled Codex Python runtime:
 
 ```powershell
-& 'C:\Users\Zeni_Bets\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' complete_week9_lab.py
+python.exe' complete_week9_lab.py
 ```
 
 Create the notebook:
 
 ```powershell
-& 'C:\Users\Zeni_Bets\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' create_week9_notebook.py
+create_week9_notebook.py
 ```
 
 Run the web app:
 
 ```powershell
-& 'C:\Users\Zeni_Bets\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' app.py
+python.exe' app.py
 ```
 
 Then open `http://127.0.0.1:8059`.
