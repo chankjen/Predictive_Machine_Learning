@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 9 Predictive Maintenance</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Predictive Intelligence & Industrial Trust</p>
+        <h1>Maintenance Risk Console</h1>
+      </div>
+      <div class="status-pill">Live lab simulation</div>
+    </header>
+
+    <main>
+      <section class="kpi-grid" aria-label="Fleet summary">
+        <div class="kpi">
+          <span>Failure Rate</span>
+          <strong id="failureRate">--</strong>
+        </div>
+        <div class="kpi">
+          <span>Highest Risk Asset</span>
+          <strong id="highRiskAsset">--</strong>
+        </div>
+        <div class="kpi">
+          <span>Risk Probability</span>
+          <strong id="highRiskProbability">--</strong>
+        </div>
+        <div class="kpi">
+          <span>Decision Lens</span>
+          <strong>Recall + SHAP</strong>
+        </div>
+      </section>
+
+      <section class="grid-two">
+        <div class="panel">
+          <div class="panel-title">
+            <h2>Model Benchmark</h2>
+          </div>
+          <div id="metricsChart"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">
+            <h2>Fleet Risk Queue</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th>Cycle</th>
+                  <th>Risk</th>
+                  <th>Band</th>
+                  <th>Driver</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="fleetRows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-two">
+        <div class="panel">
+          <div class="panel-title">
+            <h2>SHAP Evidence</h2>
+          </div>
+          <div class="image-tabs">
+            <button class="tab active" data-image="/outputs/shap_global_summary.png">Global</button>
+            <button class="tab" data-image="/outputs/shap_local_force_plot.png">Local</button>
+            <button class="tab" data-image="/outputs/precision_recall_curves.png">PR Curve</button>
+          </div>
+          <img id="evidenceImage" src="/outputs/shap_global_summary.png" alt="Model evidence plot">
+        </div>
+        <div class="panel">
+          <div class="panel-title">
+            <h2>Operator Chat</h2>
+          </div>
+          <div id="chatLog" class="chat-log">
+            <div class="bot">Ask why an asset is flagged, what action to take, or why recall matters.</div>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" value="Why is the highest-risk asset flagged?" aria-label="Operator question">
+            <button type="submit">Ask</button>
+          </form>
+          <div id="assetExplanation" class="explanation"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

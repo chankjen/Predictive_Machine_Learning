@@ -1,0 +1,132 @@
+{
+  "dataset_shape": [
+    6000,
+    10
+  ],
+  "failure_rate": 0.02,
+  "train_failure_rate": 0.01880952380952381,
+  "test_failure_rate": 0.028888888888888888,
+  "metrics": [
+    {
+      "model": "Baseline Random Forest",
+      "accuracy": 0.99,
+      "failure_precision": 1.0,
+      "failure_recall": 0.6538461538461539,
+      "failure_f1": 0.7906976744186046,
+      "average_precision": 0.8766513868975289,
+      "confusion_matrix": [
+        [
+          874,
+          0
+        ],
+        [
+          9,
+          17
+        ]
+      ]
+    },
+    {
+      "model": "Random Forest + SMOTE",
+      "accuracy": 0.9844444444444445,
+      "failure_precision": 1.0,
+      "failure_recall": 0.46153846153846156,
+      "failure_f1": 0.631578947368421,
+      "average_precision": 0.8294748235582858,
+      "confusion_matrix": [
+        [
+          874,
+          0
+        ],
+        [
+          14,
+          12
+        ]
+      ]
+    },
+    {
+      "model": "XGBoost + Class Weighting",
+      "accuracy": 0.99,
+      "failure_precision": 0.9047619047619048,
+      "failure_recall": 0.7307692307692307,
+      "failure_f1": 0.8085106382978723,
+      "average_precision": 0.860626139949579,
+      "confusion_matrix": [
+        [
+          872,
+          2
+        ],
+        [
+          7,
+          19
+        ]
+      ]
+    },
+    {
+      "model": "Sequence Proxy Neural Net",
+      "accuracy": 0.9766666666666667,
+      "failure_precision": 1.0,
+      "failure_recall": 0.19230769230769232,
+      "failure_f1": 0.3225806451612903,
+      "average_precision": 0.9110444667611614,
+      "confusion_matrix": [
+        [
+          874,
+          0
+        ],
+        [
+          21,
+          5
+        ]
+      ]
+    },
+    {
+      "model": "K-Means High-Risk Segments",
+      "accuracy": null,
+      "failure_precision": null,
+      "failure_recall": null,
+      "failure_f1": null,
+      "average_precision": 0.13333333333333333,
+      "confusion_matrix": null
+    }
+  ],
+  "kmeans_cluster_failure_rates": {
+    "0": 0.0,
+    "1": 0.08846584546472565,
+    "2": 0.0
+  },
+  "high_risk_asset": 111,
+  "high_risk_cycle": 50,
+  "high_risk_probability": 0.9996991157531738,
+  "top_local_shap_factors": [
+    {
+      "feature": "process_temp",
+      "value": 0.912827989100083,
+      "shap_contribution": 3.4026894569396973,
+      "abs_contribution": 3.4026894569396973
+    },
+    {
+      "feature": "vibration",
+      "value": 0.9400482575171649,
+      "shap_contribution": 2.9490699768066406,
+      "abs_contribution": 2.9490699768066406
+    },
+    {
+      "feature": "noise",
+      "value": 0.9104767392289771,
+      "shap_contribution": 1.3959678411483765,
+      "abs_contribution": 1.3959678411483765
+    },
+    {
+      "feature": "asset_id",
+      "value": 111.0,
+      "shap_contribution": -0.6916415095329285,
+      "abs_contribution": 0.6916415095329285
+    },
+    {
+      "feature": "tool_wear",
+      "value": 0.8983894239644382,
+      "shap_contribution": 0.528059184551239,
+      "abs_contribution": 0.528059184551239
+    }
+  ]
+}
